@@ -5,8 +5,8 @@ late String name;
 late String nickname;
 late String image;
 late String deadOrAlive;
-late List<dynamic> jobs;
-late List <dynamic>appearanceOfSeasonsBB;
+late List<dynamic>? jobs;
+late List <dynamic>?appearanceOfSeasonsBB;
 late String actorName;
 late String category;
 late List<dynamic>appearanceOfBetterCallSaul;
@@ -21,7 +21,7 @@ Character.fromJson(Map<String,dynamic> json){
   appearanceOfSeasonsBB=json['apperance'];
   actorName=json['portrayed'];
   category=json['category'];
-  appearanceOfBetterCallSaul=json['better_call_saul_apperance'];
+  // appearanceOfBetterCallSaul=json['better_call_saul_apperance'];
 
 }
 
