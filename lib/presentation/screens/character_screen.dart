@@ -1,8 +1,11 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:store/app_router.dart';
 import 'package:store/business_logic/characters_cubit.dart';
 import 'package:store/constants/colors.dart';
 import 'package:store/data/models/characters_model.dart';
+import 'package:store/presentation/screens/episodes_screen.dart';
 import 'package:store/presentation/widgets/character_item.dart';
 
 class CharacterScreen extends StatefulWidget {
@@ -14,6 +17,7 @@ class CharacterScreen extends StatefulWidget {
 
 class _CharacterScreenState extends State<CharacterScreen> {
   List<Character>? allCharacters;
+  AppRouter? appRouter;
 
   @override
   void initState() {
@@ -32,8 +36,8 @@ class _CharacterScreenState extends State<CharacterScreen> {
         } else {
           return const Center(
               child: CircularProgressIndicator(
-            color: MyColors.myYellow,
-          ));
+                color: MyColors.myYellow,
+              ));
         }
       },
     );
@@ -62,7 +66,9 @@ class _CharacterScreenState extends State<CharacterScreen> {
         padding: EdgeInsets.zero,
         itemCount: allCharacters!.length,
         itemBuilder: (ctx, index) {
-          return CharacterItem(character: allCharacters![index],);
+          return CharacterItem(
+            character: allCharacters![index],
+          );
         });
   }
 
@@ -75,6 +81,17 @@ class _CharacterScreenState extends State<CharacterScreen> {
           'Characters',
           style: TextStyle(color: MyColors.myGrey),
         ),
+        actions: [
+          TextButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => const EpisodesScreen()));
+              },
+              child: const Text(
+                'Episodes',
+                style: TextStyle(color: Colors.white),
+              ))
+        ],
       ),
       body: buildBlocWidget(),
     );
