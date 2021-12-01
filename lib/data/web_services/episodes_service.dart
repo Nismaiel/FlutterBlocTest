@@ -15,10 +15,9 @@ class EpisodeService {
 
   Future<List<dynamic>> getAllEpisodes() async {
     try {
-      Response response = await dio.get('/api/episodes');
+      Response response = await dio.get('episodes');
       return response.data;
     } catch (e) {
-      print(e.toString());
       return [];
     }
   }

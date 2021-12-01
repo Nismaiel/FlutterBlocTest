@@ -39,6 +39,7 @@ class AppRouter {
         });
 
       case episodesScreen:
+
         return MaterialPageRoute(builder: (_) {
           return BlocProvider(
             create: (ctx) => episodesCubit,

@@ -3,10 +3,10 @@ import 'dart:core';
 class EpisodeModel{
   late int episodeId;
   late String title;
-  late int season;
-  late int episode;
+  late dynamic season;
+  late dynamic episode;
   late String airDate;
-  late List<String>characters;
+  late List<dynamic>characters;
 
 EpisodeModel.fromJson(Map<String,dynamic>json){
   episodeId=json['episode_id'];

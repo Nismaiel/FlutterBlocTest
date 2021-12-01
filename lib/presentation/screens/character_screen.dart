@@ -1,9 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:store/app_router.dart';
 import 'package:store/business_logic/characters_cubit.dart';
 import 'package:store/constants/colors.dart';
+import 'package:store/constants/strings.dart';
 import 'package:store/data/models/characters_model.dart';
 import 'package:store/presentation/screens/episodes_screen.dart';
 import 'package:store/presentation/widgets/character_item.dart';
@@ -36,8 +36,8 @@ class _CharacterScreenState extends State<CharacterScreen> {
         } else {
           return const Center(
               child: CircularProgressIndicator(
-                color: MyColors.myYellow,
-              ));
+            color: MyColors.myYellow,
+          ));
         }
       },
     );
@@ -84,8 +84,7 @@ class _CharacterScreenState extends State<CharacterScreen> {
         actions: [
           TextButton(
               onPressed: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (_) => const EpisodesScreen()));
+               Navigator.pushNamed(context, episodesScreen);
               },
               child: const Text(
                 'Episodes',
