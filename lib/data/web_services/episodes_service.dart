@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:store/constants/strings.dart';
 
 class EpisodeService {
-  late Dio dio;
+late   Dio dio;
 
   EpisodeService() {
     BaseOptions options = BaseOptions(

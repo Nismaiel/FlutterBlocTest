@@ -74,7 +74,7 @@ class _GotCharacterScreenState extends State<GotCharacterScreen> {
               horizontal: 15, vertical: 10),
           color: Colors.black54,
           alignment: Alignment.bottomCenter,
-          child: Text('${char.firstName}${char.title}${char.lastName}',
+          child: Text('${char.firstName} \"${ char.title }\" ${char.lastName}',
             style: const TextStyle(
               height: 1.3,
               fontSize: 16,
