@@ -21,7 +21,6 @@ Character.fromJson(Map<String,dynamic> json){
   appearanceOfSeasonsBB=json['apperance'];
   actorName=json['portrayed'];
   category=json['category'];
-  // appearanceOfBetterCallSaul=json['better_call_saul_apperance'];
 
 }
 

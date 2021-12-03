@@ -5,7 +5,6 @@ import 'package:store/business_logic/characters_cubit.dart';
 import 'package:store/constants/colors.dart';
 import 'package:store/constants/strings.dart';
 import 'package:store/data/models/characters_model.dart';
-import 'package:store/presentation/screens/episodes_screen.dart';
 import 'package:store/presentation/widgets/character_item.dart';
 
 class CharacterScreen extends StatefulWidget {
@@ -22,7 +21,7 @@ class _CharacterScreenState extends State<CharacterScreen> {
   @override
   void initState() {
     super.initState();
-    allCharacters =
+
         BlocProvider.of<CharactersCubit>(context).getAllCharacters();
   }
 
@@ -89,7 +88,14 @@ class _CharacterScreenState extends State<CharacterScreen> {
               child: const Text(
                 'Episodes',
                 style: TextStyle(color: Colors.white),
-              ))
+              )), TextButton(
+              onPressed: () {
+               Navigator.pushNamed(context, gotScreen);
+              },
+              child: const Text(
+                'GOT',
+                style: TextStyle(color: Colors.white),
+              )),
         ],
       ),
       body: buildBlocWidget(),
